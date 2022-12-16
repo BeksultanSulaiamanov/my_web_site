@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+
+    <form action="{% url 'create' %}" method="post">
+        {% csrf_token %}
+
+        <div class="form-group">
+            {{ form.name }}
+
+<!--          <label for="usr">Name:</label>-->
+<!--          <input type="text" class="form-control" id="usr">-->
+       </div>
+        <div class="form-group">
+            {{ form.description }}
+<!--          <label for="comment">Comment:</label>-->
+<!--          <textarea class="form-control" rows="5" id="comment"></textarea>-->
+        </div>
+        {{ form.img }}<br>
+        <input type="submit">
+    </form>
+</div>
+
+{% endblock %}
